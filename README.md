@@ -7,17 +7,18 @@
     
 - Second command: 
     #aws ec2 create-key-pair --key-name MyKeyPair
+    
     This command will help you by creating a Key-Pair to keey the upcoming instance secure of anonymous and unwanted login to ouur instance.
     
     
  - Third command: 
     #aws ec2 create-security-group --group-name MySecurityGroup --description "My security group" 
+    
     This command will ley you create a Security Group that will helpyou control the inbound and outbound traffic to your instance.
     
-    
-   We will just mention the inbound traffic rule as the AWS EC2 instance maintains Session(Statefulness) of the incoming requests.
+     We will just mention the inbound traffic rule as the AWS EC2 instance maintains Session(Statefulness) of the incoming requests.
    
-  - Fourth command: 
+  - Fourth command:  
      #aws ec2 run-instances --image-id ami-068d43a544160b7ef --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-0ef69efcd4eede0ea --subnet-id subnet-72d8a43e
      
      This command will create an instance on the AWS account of the user specified on the first (#aws configure) command by providing keys.
