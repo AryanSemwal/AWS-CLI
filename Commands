@@ -135,3 +135,64 @@
                             "OwnerId": "050574908341",
                             "ReservationId": "r-0b619b26372482b53"
                         }
+
+
+
+
+
+
+ -> aws ec2 create-volume --volume-type gp2 --size 1 --availability-zone us-east-1b
+            {
+                "AvailabilityZone": "ap-south-1b",
+                "CreateTime": "2021-03-27T11:07:50+00:00",
+                "Encrypted": false,
+                "Size": 1,
+                "SnapshotId": "",
+                "State": "creating",
+                "VolumeId": "vol-025d0fe1092b1b4f4",
+                "Iops": 100,
+                "Tags": [],
+                "VolumeType": "gp2",
+                "MultiAttachEnabled": false
+            }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  -> aws ec2 attach-volume --volume-id vol-09bb61f16caf50505 --instance-id i-0122b14214bee5d4a --device /dev/sdf
+       {
+          "AttachTime": "2021-03-27T11:10:23.993000+00:00",
+          "Device": "/dev/sdf",
+          "InstanceId": "i-0122b14214bee5d4a",
+          "State": "attaching",
+          "VolumeId": "vol-09bb61f16caf50505"
+      }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
