@@ -1,0 +1,136 @@
+-> aws configure
+      AWS Access Key ID [None]: AKIAQXRT73O24M7PIFGP
+      AWS Secret Access Key [None]: x0x9XXXXXXXXXXXXXXXXXXXXXXXIWXjIt
+      Default region name [None]: ap-south-1
+      Default output format [None]: json
+      
+    
+    
+    
+    
+-> aws ec2 create-key-pair --key-name MyKeyPair
+      {
+    "KeyFingerprint": "27:9b:b6:37:d0:4e:d4:dd:b0:d5:30:8b:ec:5a:5f:b9:d8:42:a5:0d",
+    "KeyMaterial": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAjSXecetpGjX2Ro5p7Wt7m4378STB5C6bay10xzb6TyGLi9ec\naBVqcvfFHY3hMgewb040cOnv2vgdrPdCNQ3f//ka236aCrIRT61Iz5YtrO9cU+Xu\nISC6eniBdDKPj88waRdaGDdVA7zUQwroV19S/fXgT9SAINNgmxcfiohCpvtepcrW\nW8HRIOuW4S1mPNPjL6SyDqZUUb1gsEoau0baj9B10d8YQ8hEcMNtQYCfP0r9dwV9\nLkuiSdXu7buFHxxREAmEzFDpzuj3HElJiCx6s0/Ni3EDL46q5upzwTvcjY/NikOT\nf2/0qe93rzwyA1aP3bsV03wZ6sDJfNqthsGh3QIDAQABAoIBAA2E1AJrPrzQ8E6f\ns0uXINasSbY2BBAb2qzwRKAUBvNvThNNymA5tOFgE9QZ07jb/a0be3BZJ6z8WLNJ\nV2EHfC3jKQxe2tgtZ/UOrsubIbLPljM+8YjgvpueUR/U++UVPhjCsNFi81SRUG8/\nazN7INLMKvjabI84T6drFo1JMcEWao6b9WX1mFmSvhFHXDQGBG+CXw09R7+VhanL\nZUHfkTracIrw3/9ItKjwIQxBabms05pUXa8IK5StY5VghqWf8qz49SGmF/OurVrT\nOZ+/lZg1kBVtOpFSmZVLXlfDtW7p0VyZcC5KW3WuETYKgDDjjWlB2LAO8uRFNJ4D\nKU2slCECgYEA+tpipEkmdzLZ2Fg1FFaz3aJU5bBLa3BXdBKmzjy7emsFHG6sQlw7\nfvw45CIXGMs5Yr88iapPdv0w3yV1NKyUN1HYGxqEWuvvQn0ZGRlDcNtzmr0R7Cca\nJpWuVGalaPpZrkUthcH0vN5cNIt1RVFqexCEBR2lIsZWWBfnZnuCUQkCgYEAkAtA\n4TOkWhYTEGMlXcrKerPRy1L2gBzEsh5uRxmSJDcUNrSq59fHVtLCp50B72L1NR56\n2YUiCEW2dzg4xeYMRMXqhr+oCDpElUeFKhJx5Rr74CNFRigYt2IKLVZYFb80+A9C\neejvVvPZIR8jssQfSyIoQ1OwGbfN9cULxpTlwzUCgYEA59NnEdigecw+0tdBxpgS\nBaN9vf9c09+wko6iJTqvMAUzZgFJpNJEEajaksqGed1mHUIKmlcQtTBsN+0QEivj\nlfRHOVUaOESOiu29ghp83xGQFtLge1PvsPTndQyflRK4SnuYBGMo4FrG77BqIjOJ\nqk2rFGc/M5IEPclpiqZd2rECgYBG4VK+voO8VKpy4ObNPXHfaUbuD1f++KkNoQ3Q\n7NNOANBwjvyecz7DCZkBk7AVFRPmXKZFDU8O1QcRqVe+ghI9cUqTnhHYYpvG/VeY\nuVTUUS/qPlDjUe2/p32si5VythEhk5i5lpbXqcyJkOInIHzpotg/MRoxvZGaw6ik\nwjZBlQKBgA5fsY94NFfeXsXIoe27MtjFkBFg3IKnX9vcpbvVXoX5/HDsd70GlxMZ\n0dFGGpUCUhXgf6/ru711wvnvp9uPpaT3MVn6BDzbDetjNaxWxgNW3yYz/z+orrd5\nzC6DXwTtW9ufb5I+fAo8mYlC/wXKzpmoXSpUjMP0t28z5tqCHwdp\n-----END RSA PRIVATE KEY-----",
+    "KeyName": "MyKeyPair",
+    "KeyPairId": "key-0684be976062fd6e4"
+      }
+      
+      
+      
+      
+      
+ -> aws ec2 create-security-group --group-name MySecurityGroup --description "My security group"
+            {
+          "GroupId": "sg-0ef69efcd4eede0ea"
+            }
+
+
+
+
+
+
+  -> aws ec2 run-instances --image-id ami-068d43a544160b7ef --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-0ef69efcd4eede0ea --subnet-id subnet-72d8a43e
+            {
+    "Groups": [],
+    "Instances": [
+        {
+            "AmiLaunchIndex": 0,
+            "ImageId": "ami-068d43a544160b7ef",
+            "InstanceId": "i-0fa38e2c84ba22197",
+            "InstanceType": "t2.micro",
+            "KeyName": "MyKeyPair",
+            "LaunchTime": "2021-03-27T10:24:09+00:00",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "Placement": {
+                "AvailabilityZone": "ap-south-1b",
+                "GroupName": "",
+                "Tenancy": "default"
+            },
+            "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
+            "PrivateIpAddress": "172.31.4.202",
+            "ProductCodes": [],
+            "PublicDnsName": "",
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "StateTransitionReason": "",
+            "SubnetId": "subnet-72d8a43e",
+            "VpcId": "vpc-4227c629",
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "785ded50-aefb-4965-bacc-3700185f3e4f",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [
+                {
+                    "Attachment": {
+                        "AttachTime": "2021-03-27T10:24:09+00:00",
+                        "AttachmentId": "eni-attach-0a40499ba7d050b2c",
+                        "DeleteOnTermination": true,
+                        "DeviceIndex": 0,
+                        "Status": "attaching"
+                    },
+                    "Description": "",
+                    "Groups": [
+                        {
+                            "GroupName": "MySecurityGroup",
+                            "GroupId": "sg-0ef69efcd4eede0ea"
+                        }
+                    ],
+                    "Ipv6Addresses": [],
+                    "MacAddress": "0a:80:33:3b:0f:2a",
+                    "NetworkInterfaceId": "eni-0b7f6b7e6a946c7f6",
+                    "OwnerId": "050574908341",
+                    "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
+                    "PrivateIpAddress": "172.31.4.202",
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true,
+                            "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
+                            "PrivateIpAddress": "172.31.4.202"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Status": "in-use",
+                    "SubnetId": "subnet-72d8a43e",
+                    "VpcId": "vpc-4227c629",
+                    "InterfaceType": "interface"
+                }
+            ],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+                {
+                    "GroupName": "MySecurityGroup",
+                    "GroupId": "sg-0ef69efcd4eede0ea"
+                }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+                "CoreCount": 1,
+                "ThreadsPerCore": 1
+            },
+            "CapacityReservationSpecification": {
+                "CapacityReservationPreference": "open"
+            },
+            "MetadataOptions": {
+                "State": "pending",
+                "HttpTokens": "optional",
+                "HttpPutResponseHopLimit": 1,
+                "HttpEndpoint": "enabled"
+            }
+        }
+    ],
+    "OwnerId": "050574908341",
+    "ReservationId": "r-0b619b26372482b53"
+}
