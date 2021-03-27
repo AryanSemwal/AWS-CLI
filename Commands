@@ -20,6 +20,7 @@
       
       
       
+      
  -> aws ec2 create-security-group --group-name MySecurityGroup --description "My security group"
             {
           "GroupId": "sg-0ef69efcd4eede0ea"
@@ -32,105 +33,105 @@
 
   -> aws ec2 run-instances --image-id ami-068d43a544160b7ef --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-0ef69efcd4eede0ea --subnet-id subnet-72d8a43e
             {
-    "Groups": [],
-    "Instances": [
-        {
-            "AmiLaunchIndex": 0,
-            "ImageId": "ami-068d43a544160b7ef",
-            "InstanceId": "i-0fa38e2c84ba22197",
-            "InstanceType": "t2.micro",
-            "KeyName": "MyKeyPair",
-            "LaunchTime": "2021-03-27T10:24:09+00:00",
-            "Monitoring": {
-                "State": "disabled"
-            },
-            "Placement": {
-                "AvailabilityZone": "ap-south-1b",
-                "GroupName": "",
-                "Tenancy": "default"
-            },
-            "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
-            "PrivateIpAddress": "172.31.4.202",
-            "ProductCodes": [],
-            "PublicDnsName": "",
-            "State": {
-                "Code": 0,
-                "Name": "pending"
-            },
-            "StateTransitionReason": "",
-            "SubnetId": "subnet-72d8a43e",
-            "VpcId": "vpc-4227c629",
-            "Architecture": "x86_64",
-            "BlockDeviceMappings": [],
-            "ClientToken": "785ded50-aefb-4965-bacc-3700185f3e4f",
-            "EbsOptimized": false,
-            "EnaSupport": true,
-            "Hypervisor": "xen",
-            "NetworkInterfaces": [
-                {
-                    "Attachment": {
-                        "AttachTime": "2021-03-27T10:24:09+00:00",
-                        "AttachmentId": "eni-attach-0a40499ba7d050b2c",
-                        "DeleteOnTermination": true,
-                        "DeviceIndex": 0,
-                        "Status": "attaching"
-                    },
-                    "Description": "",
-                    "Groups": [
-                        {
-                            "GroupName": "MySecurityGroup",
-                            "GroupId": "sg-0ef69efcd4eede0ea"
+            "Groups": [],
+            "Instances": [
+                  {
+                  "AmiLaunchIndex": 0,
+                  "ImageId": "ami-068d43a544160b7ef",
+                  "InstanceId": "i-0fa38e2c84ba22197",
+                  "InstanceType": "t2.micro",
+                  "KeyName": "MyKeyPair",
+                  "LaunchTime": "2021-03-27T10:24:09+00:00",
+                  "Monitoring": {
+                      "State": "disabled"
+                                    },
+                                    "Placement": {
+                                        "AvailabilityZone": "ap-south-1b",
+                                        "GroupName": "",
+                                        "Tenancy": "default"
+                                    },
+                                    "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.4.202",
+                                    "ProductCodes": [],
+                                    "PublicDnsName": "",
+                                    "State": {
+                                        "Code": 0,
+                                        "Name": "pending"
+                                    },
+                                    "StateTransitionReason": "",
+                                    "SubnetId": "subnet-72d8a43e",
+                                    "VpcId": "vpc-4227c629",
+                                    "Architecture": "x86_64",
+                                    "BlockDeviceMappings": [],
+                                    "ClientToken": "785ded50-aefb-4965-bacc-3700185f3e4f",
+                                    "EbsOptimized": false,
+                                    "EnaSupport": true,
+                                    "Hypervisor": "xen",
+                                    "NetworkInterfaces": [
+                                        {
+                                            "Attachment": {
+                                                "AttachTime": "2021-03-27T10:24:09+00:00",
+                                                "AttachmentId": "eni-attach-0a40499ba7d050b2c",
+                                                "DeleteOnTermination": true,
+                                                "DeviceIndex": 0,
+                                                "Status": "attaching"
+                                            },
+                                            "Description": "",
+                                            "Groups": [
+                                                {
+                                                    "GroupName": "MySecurityGroup",
+                                                    "GroupId": "sg-0ef69efcd4eede0ea"
+                                                }
+                                            ],
+                                            "Ipv6Addresses": [],
+                                            "MacAddress": "0a:80:33:3b:0f:2a",
+                                            "NetworkInterfaceId": "eni-0b7f6b7e6a946c7f6",
+                                            "OwnerId": "050574908341",
+                                            "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
+                                            "PrivateIpAddress": "172.31.4.202",
+                                            "PrivateIpAddresses": [
+                                                {
+                                                    "Primary": true,
+                                                    "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
+                                                    "PrivateIpAddress": "172.31.4.202"
+                                                }
+                                            ],
+                                            "SourceDestCheck": true,
+                                            "Status": "in-use",
+                                            "SubnetId": "subnet-72d8a43e",
+                                            "VpcId": "vpc-4227c629",
+                                            "InterfaceType": "interface"
+                                        }
+                                    ],
+                                    "RootDeviceName": "/dev/xvda",
+                                    "RootDeviceType": "ebs",
+                                    "SecurityGroups": [
+                                        {
+                                            "GroupName": "MySecurityGroup",
+                                            "GroupId": "sg-0ef69efcd4eede0ea"
+                                        }
+                                    ],
+                                    "SourceDestCheck": true,
+                                    "StateReason": {
+                                        "Code": "pending",
+                                        "Message": "pending"
+                                    },
+                                    "VirtualizationType": "hvm",
+                                    "CpuOptions": {
+                                        "CoreCount": 1,
+                                        "ThreadsPerCore": 1
+                                    },
+                                    "CapacityReservationSpecification": {
+                                        "CapacityReservationPreference": "open"
+                                    },
+                                    "MetadataOptions": {
+                                        "State": "pending",
+                                        "HttpTokens": "optional",
+                                        "HttpPutResponseHopLimit": 1,
+                                        "HttpEndpoint": "enabled"
+                                    }
+                                }
+                            ],
+                            "OwnerId": "050574908341",
+                            "ReservationId": "r-0b619b26372482b53"
                         }
-                    ],
-                    "Ipv6Addresses": [],
-                    "MacAddress": "0a:80:33:3b:0f:2a",
-                    "NetworkInterfaceId": "eni-0b7f6b7e6a946c7f6",
-                    "OwnerId": "050574908341",
-                    "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
-                    "PrivateIpAddress": "172.31.4.202",
-                    "PrivateIpAddresses": [
-                        {
-                            "Primary": true,
-                            "PrivateDnsName": "ip-172-31-4-202.ap-south-1.compute.internal",
-                            "PrivateIpAddress": "172.31.4.202"
-                        }
-                    ],
-                    "SourceDestCheck": true,
-                    "Status": "in-use",
-                    "SubnetId": "subnet-72d8a43e",
-                    "VpcId": "vpc-4227c629",
-                    "InterfaceType": "interface"
-                }
-            ],
-            "RootDeviceName": "/dev/xvda",
-            "RootDeviceType": "ebs",
-            "SecurityGroups": [
-                {
-                    "GroupName": "MySecurityGroup",
-                    "GroupId": "sg-0ef69efcd4eede0ea"
-                }
-            ],
-            "SourceDestCheck": true,
-            "StateReason": {
-                "Code": "pending",
-                "Message": "pending"
-            },
-            "VirtualizationType": "hvm",
-            "CpuOptions": {
-                "CoreCount": 1,
-                "ThreadsPerCore": 1
-            },
-            "CapacityReservationSpecification": {
-                "CapacityReservationPreference": "open"
-            },
-            "MetadataOptions": {
-                "State": "pending",
-                "HttpTokens": "optional",
-                "HttpPutResponseHopLimit": 1,
-                "HttpEndpoint": "enabled"
-            }
-        }
-    ],
-    "OwnerId": "050574908341",
-    "ReservationId": "r-0b619b26372482b53"
-}
